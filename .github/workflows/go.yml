@@ -4,22 +4,33 @@ on:
   workflow_dispatch:
     inputs:
       logLevel:
-        description: 'Log level'     
+        description: 'Deploy to'     
         required: true
-        default: 'warning' 
+        default: 'DEV' 
         type: choice
         options:
-        - info
-        - warning
-        - debug 
-      tags:
-        description: 'Test scenario tags'
-        required: false 
-        type: boolean
-      environment:
-        description: 'Environment to run tests against'
-        type: environment
-        required: true 
+        - DEV
+        - ST
+        - POT
+      artifactoryUrl:
+        description: 'Your Artifactory URL'
+        default: 'myArtifactoryURL.com'  
+      artifactoryName:
+        description: 'Your Repo Name'
+        default: 'myRepoName'
+      artifactoryPath:
+        description: 'Your Repo path'
+        default: 'myRepoPath' 
+      artifactoryToken:
+        description: 'Your Repo AccessToken'
+        default: 'TOKEN String'
+      openshiftServer:
+        description: 'Your Artifactory URL'
+        default: '10.0.0.1:8081'  
+      openshiftToken:
+        description: 'Your openshift token'
+        default: 'TOKEN String'
+
 
 jobs:
 
