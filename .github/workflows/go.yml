@@ -3,15 +3,6 @@ name: Go
 on:
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Deploy to'     
-        required: true
-        default: 'DEV' 
-        type: choice
-        options:
-        - DEV
-        - ST
-        - POT
       artifactoryUrl:
         description: 'Your Artifactory URL'
         default: 'myArtifactoryURL.com'  
